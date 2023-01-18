@@ -1,18 +1,27 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import "./styles.scss"
-import reportWebVitals from "./reportWebVitals"
-import { RouterProvider } from "react-router-dom"
-import router from "./router"
+import { Form, Link, useLoaderData } from "react-router-dom"
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-)
+function Index(props) {
+  const books = useLoaderData()
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+  return (
+    <div>
+      <h2>Create a New Bookmark</h2>
+      <Form action="/create" method="post">
+        <input type="input" name="website" placeholder="website name" />
+        <input type="input" name="url" placeholder="website url" />
+        <input type="submit" value="Create new bookmark" />
+      </Form>
+
+      <h2>Bookmark</h2>
+      {books.map(book => (
+        <div key={book._id} className="book">
+          <Link to={`/${book._id}`}>
+            <h1>{book.website}</h1>
+          </Link>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default Index
