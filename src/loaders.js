@@ -5,3 +5,9 @@ export const booksLoader = async () => {
   const books = await response.json()
   return books
 }
+
+export const bookLoader = async ({params}) => {
+  const response = await fetch(URL + "/book/" + params.id)
+  const book = await response.json()
+  return book
+}
