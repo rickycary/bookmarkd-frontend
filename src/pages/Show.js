@@ -4,7 +4,7 @@ function Show(props){
 	const book = useLoaderData()
 
 	return (
-		<div className="book">
+		<div className="body">
 			<h1>{book.website}</h1>
 			<h2>
 				<a href={book.url}>{book.url}</a>
@@ -12,14 +12,14 @@ function Show(props){
 
 			<h2>Update {book.website}</h2>
 			<Form action={`/update/${book._id}`} method="post">
-				<input type="input" name="website" placeholder="Website Name" />
+				<input type="input" name="website" placeholder={book.website} />
 				<input type="input" name="url" placeholder="URL" />
-				<input type="submit" value={`Update ${book.website}`} />
+				<input type="submit" value={`Update`} />
 			</Form>
 
 			<h2>Delete Book</h2>
 			<Form action={`/delete/${book._id}`} method="post">
-				<input type="submit" value={`delete ${book.website}`} />
+				<input type="submit" value={`Delete`} />
 			</Form>
 		</div>
 	)

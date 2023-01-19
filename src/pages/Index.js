@@ -4,7 +4,7 @@ function Index(props) {
   const books = useLoaderData()
 
   return (
-    <div>
+    <div className="body">
       <h2>Create a New Bookmark</h2>
       <Form action="/create" method="post">
         <input type="input" name="website" placeholder="website name" />
