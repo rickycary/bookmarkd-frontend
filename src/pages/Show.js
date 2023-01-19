@@ -19,7 +19,7 @@ function Show(props){
 
 			<h2>Delete Book</h2>
 			<Form action={`/delete/${book._id}`} method="post">
-				<input type="submit" value={`delete ${book.name}`} />
+				<input type="submit" value={`delete ${book.website}`} />
 			</Form>
 		</div>
 	)
