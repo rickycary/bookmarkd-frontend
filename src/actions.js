@@ -21,3 +21,23 @@ export const createAction = async ({ request }) => {
   // redirect to index
   return redirect("/")
 }
+
+export const updateAction = async ({ request, params }) => {
+
+	const formData = await request.formData()
+	
+	const updatedBook = {
+		website: formData.get("website"),
+		url: formData.get("url"),
+	}
+	
+	await fetch(URL + "/book/" + params.id, {
+		method: "put",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(updatedBook),
+	})
+	// redirect to index
+	return redirect("/")
+}
