@@ -1,5 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  font-size: 50px;
+}
+
 .body {
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  
+  font-size: 20px;
+}
+
+.index-form {
+  margin: 30px;
+}
+
+input {
+  margin: 10px;
+  font-size: 17px;
+  border-radius: 3px;
+}
+
+.book {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-image: url('https://images.pexels.com/photos/9807345/pexels-photo-9807345.jpeg');
+}
+
+#delete {
+  margin-left: 120px;
+  font-size: large;
+}
+
+.show {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.return-link {
+  font-size: 20px;
+}
+
+.links:hover {
+  color:red;
+}
+
+#delete:hover {
+  color: red;
 }
