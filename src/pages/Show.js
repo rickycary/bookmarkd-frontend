@@ -7,13 +7,13 @@ function Show(props) {
     <div className="show">
       <h1>{book.website}</h1>
       <h2>
-        <a href={book.url} target="_blank" rel="noreferrer">{book.url}</a>
+        <a href={book.url} target="_blank" rel="noopener noreferrer">{book.url}</a>
       </h2>
 
       
       <Form action={`/update/${book._id}`} method="post" >
-        <input type="input" name="website" placeholder={book.website} />
-        <input type="input" name="url" placeholder="URL" />
+        <input type="input" name="website" placeholder={book.website} autocomplete="off"/>
+        <input type="input" name="url" placeholder="URL" autocomplete="off" />
         <input type="submit" value={`Update`} className='links'/>
       </Form>
 
