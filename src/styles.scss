@@ -21,14 +21,19 @@ $contrastcolor: black;
 nav {
     @include white-text-black-bg;
     display: flex;
-    justify-content: flex-start;
-
+    justify-content: center;;
     a {
         @include white-text-black-bg;
-
+        text-decoration: none;
         div {
             margin: 10px;
-            font-size: large;
+            font-size: 25px;
         }
+    }
+}
+
+.book {
+    input{
+        border: none;
     }
 }
